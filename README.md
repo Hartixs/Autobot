@@ -5,7 +5,7 @@
 
 
 ## **Installation & Build Instructions**
-Clone or copy all the files provided in this repository into the src folder of our main ROS 2 workspace. (Except the website folder)
+Clone or copy all the files provided in this repository into the src folder of our main ROS 2 workspace.
 
 Navigate to the root of the workspace and build the package using colcon:
 
