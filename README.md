@@ -20,7 +20,7 @@ To launch the hardware bridges, ESKF, LiDAR, and core transformations, we use ou
 
 Bash
 
-ros2 launch <our_package_name> ultimate.launch.py
+_ros2 launch <our_package_name> ultimate.launch.py_
 (Note: Replace <our_package_name> with the actual name of our CMake package).
 
 ### 2. Mapping (SLAM)
@@ -28,7 +28,7 @@ To map a new environment, we run the asynchronous online mapping node provided b
 
 Bash
 
-ros2 launch slam_toolbox online_async_launch.py
+_ros2 launch slam_toolbox online_async_launch.py_
 Once the map is completely drawn in RViz, remember to save it using the slam_toolbox panel or via the map saver CLI before shutting down the node.
 
 ### 3. Autonomous Navigation
@@ -36,4 +36,4 @@ Once we have a saved map of the room, we can launch the Nav2 stack for autonomou
 
 Bash
 
-ros2 launch nav2_bringup bringup_launch.py map:=/path/to/our/map.yaml params_file:=/path/to/our/nav2_params.yaml
+_ros2 launch nav2_bringup bringup_launch.py map:=/path/to/our/map.yaml params_file:=/path/to/our/nav2_params.yaml_
