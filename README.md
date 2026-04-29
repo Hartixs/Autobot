@@ -1,3 +1,9 @@
+## Precautions:
+1. Make sure the robot & the Remote Desktop is on same Wi-Fi network.
+2. Retrieve the ip address to connect to remote desktop. (_hostname -I_ [for ubuntu])
+3. When Localizing ensure that dynamic laser scan matches the existing SLAM map walls for best results.
+
+
 ## **Installation & Build Instructions**
 Clone or copy all the files provided in this repository into the src folder of our main ROS 2 workspace. (Except the website folder)
 
@@ -46,3 +52,29 @@ Once we have a saved map of the room, we can launch the Nav2 stack for autonomou
 Bash
 
 _ros2 launch nav2_bringup bringup_launch.py map:=/path/to/our/map.yaml params_file:=/path/to/our/nav2_params.yaml_
+
+
+### 4. IoT Dashboard
+To launch IoT Dashboard first we need to launch ultimate launch given in 1st point. Then we need to download the website folder, navigate inside that directory & launch the python files:
+
+
+Bash
+
+_python3 autobot_backend.py_
+
+_python3 ros2_mqtt_bridge.py_
+
+
+### 5. Swarm Simulation
+Here, the swarm simulation works on top of already built OpenRMF framework, we have perform optimization through an auction house based bidding system, which calculates shortest distance based on euclidian distance & time taken by individual robots to complete task.
+
+Follow this Github and install OpenRMF:
+
+https://github.com/open-rmf/rmf_demos
+
+Once it's installed download the auction_house.py python file, given below is the launch sequence:
+
+OpenRMF office launch: _ros2 launch rmf_demos_gz office.launch.xml_
+
+Custom auction house: _python3 auction_house.py_
+
